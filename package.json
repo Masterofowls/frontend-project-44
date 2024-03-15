@@ -1,0 +1,17 @@
+{
+  "name": "mindgames",
+  "version": "1.0.0",
+  "description": "MindGames",
+  "main": "index.js",
+  "bin": {
+    "mindgames": "bin/brain-games.js"
+  },
+  
+  
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
