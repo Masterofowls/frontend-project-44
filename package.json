@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "name": "mindgames",
   "version": "1.0.0",
@@ -16,3 +17,23 @@
     "readline-sync": "^1.4.10"
   }
 }
+=======
+{
+  "name": "mindgames",
+  "version": "1.0.0",
+  "description": "MindGames",
+  "main": "index.js",
+  "bin": {
+    "mindgames": "bin/brain-games.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "prompt-sync": "^4.2.0",
+    "readline-sync": "^1.4.10"
+  }
+}
+>>>>>>> 7d66de9 (Co-authored-by: Daniil Shtarkman <95107643+Masterofowls@users.noreply.github.com>)
