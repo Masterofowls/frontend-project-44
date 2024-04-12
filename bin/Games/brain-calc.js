@@ -1,6 +1,6 @@
 import { gameStart, generateGameInstance } from '../../src/index.js';
 
-gameStart('What is the result of the expression?');
+gameStart('What is the result of this expression?');
 function generateGameCalc() {
   const a = Math.floor(Math.random() * 110);
   const b = Math.floor(Math.random() * 110);

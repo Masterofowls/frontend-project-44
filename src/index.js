@@ -2,14 +2,14 @@ import readlineSync from 'readline-sync';
 
 let name = '';
 export function gameStart(rules) {
-  console.log('Welcome to Brain Games!');
-  name = readlineSync.question('May I have your name? ');
-  console.log(`Hi, ${name}!`);
+  console.log('Welcome to the Brain Games, friend!');
+  name = readlineSync.question('May I have your name, please ');
+  console.log(`Hello, ${name}!`);
   console.log(rules);
 }
 
 export function failState() {
-  console.log(`Oops, let's try again, ${name}! =)`);
+  console.log(`Just try again, ${name}!`);
 }
 
 export function winState() {
@@ -31,8 +31,6 @@ export function gcd(a, b) {
     newB %= newA;
   }
 }
-
-
 
 export function gameCycle(question, answer, useAnswerCheckingYN = false) {
   console.log(`Question: ${question}`);
@@ -61,8 +59,6 @@ export function gameCycle(question, answer, useAnswerCheckingYN = false) {
   return true;
 }
 
-
-
 export function generateGameInstance(
   generateQuestion,
   generateAnswer,
@@ -83,13 +79,3 @@ export function generateGameInstance(
   winState();
   return 1;
 }
-
-module.exports = {
- gameStart,
- failState,
- winState,
- gcd,
- gameCycle,
- generateGameInstance,
- 
-};
