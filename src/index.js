@@ -13,7 +13,7 @@ export function failState() {
 }
 
 export function winState() {
-  console.log(`Greetings, ${name}!`);
+  console.log(`Congratulations,  ${name}!`);
 }
 
 export function gcd(a, b) {
