@@ -26,7 +26,7 @@ export function gcd(a, b) {
   }
   while (true) {
     if (b2 === 0) return a2;
-    newA %= newB;
+    a2 %= b2;
     if (a2 === 0) return b2;
     b2 %= a2;
   }
