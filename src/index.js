@@ -9,7 +9,7 @@ export function gameStart(rules) {
 }
 
 export function failState() {
-  console.log(`Just try again, ${name}!`);
+  console.log(`Let's try again, ${name}!`);
 }
 
 export function winState() {
