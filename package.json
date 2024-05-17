@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "@hexlet/code",
   "main": "index.js",
+  "type": "module",
   "bin": {
     "@hexlet/code": "bin/brain-games.js"
   },
@@ -16,6 +17,3 @@
     "readline-sync": "^1.4.10"
   }
 }
-
-
-

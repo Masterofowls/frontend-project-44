@@ -6,7 +6,7 @@ const primeNumbers = [
   73, 79, 83, 89, 97, 101, 103, 107,
 ];
 
-function generateGamePrime() {
+export function generateGamePrime() {
   return Math.floor(Math.random() * 110) || 11;
 }
 function giveGamePrimeAnswer(question) {

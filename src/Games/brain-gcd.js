@@ -2,7 +2,7 @@ import { gameStart, gcd, generateGameInstance } from '../../src/index.js';
 
 gameStart('Find the greatest common divisor of given numbers.');
 
-function generateGameGCD() {
+export function generateGameGCD() {
   const a = Math.floor(Math.random() * 110);
   const b = Math.floor(Math.random() * 110);
   return `${a} ${b}`;
