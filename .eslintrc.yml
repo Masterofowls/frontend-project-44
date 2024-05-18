@@ -6,6 +6,7 @@ plugins:
 # https://eslint.org/docs/user-guide/configuring#specifying-environments
 env:
   node: true
+  jest: true
 
 extends:
   - 'airbnb-base'
@@ -21,4 +22,14 @@ rules:
     - ignorePackages
     - js: always
   no-underscore-dangle: [2, { "allow": ["__filename", "__dirname"] }]
-  linebreak-style: ["error", "windows"]
+  linebreak-style: ["error", "unix"]
+  no-constant-condition: off
+  quotes: ["error", "single"]
+  semi-spacing: ["error", { "before": false, "after": true }]
+  no-new-func: "error"
+  prefer-template: "error"
+  import/prefer-default-export: "error"
+  no-multiple-empty-lines: ["error", { "max": 0 }]
+  indent: ["error", 2]
+  prefer-const: "error"
+  consistent-return: "error"

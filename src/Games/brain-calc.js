@@ -1,7 +1,7 @@
-import { gameStart, generateGameInstance } from '../../src/index.js';
+import { gameStart, generateGameInstance } from '../index.js';
 
 gameStart('What is the result of the expression?');
-export function generateGameCalc() {
+export default function generateGameCalc() {
   const a = Math.floor(Math.random() * 110);
   const b = Math.floor(Math.random() * 110);
   const c = Math.floor(Math.random() * 110);
@@ -15,14 +15,12 @@ export function generateGameCalc() {
   }
   return `${a} ${sign} ${b}`;
 }
-
 function giveGameCalcAnswer(question) {
-  return eval(question);
+  try {
+    return new Function(`return ${question}`)();
+  } catch (error) {
+    console.error('Error evaluating question:', error);
+    return null;
+  }
 }
-
 generateGameInstance(generateGameCalc, giveGameCalcAnswer, false, 3);
-
-
-
-
-

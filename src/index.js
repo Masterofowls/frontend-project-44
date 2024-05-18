@@ -7,15 +7,12 @@ export function gameStart(rules) {
   console.log(`Hello, ${name}!`);
   console.log(rules);
 }
-
 export function failState() {
   console.log(`Let's try again, ${name}!`);
 }
-
 export function winState() {
   console.log(`Congratulations, ${name}!`);
 }
-
 export function gcd(a, b) {
   let a2 = Math.abs(a);
   let b2 = Math.abs(b);
@@ -24,14 +21,14 @@ export function gcd(a, b) {
     a2 = b2;
     b2 = temp;
   }
-  while (true) {
+  const run = true;
+  while (run) {
     if (b2 === 0) return a2;
     a2 %= b2;
     if (a2 === 0) return b2;
     b2 %= a2;
   }
 }
-
 export function gameCycle(question, answer, useAnswerCheckingYN = false) {
   console.log(`Question: ${question}`);
   const userAnswer = readlineSync.question('Type your answer: ');
@@ -58,7 +55,6 @@ export function gameCycle(question, answer, useAnswerCheckingYN = false) {
   }
   return true;
 }
-
 export function generateGameInstance(
   generateQuestion,
   generateAnswer,
