@@ -5,7 +5,7 @@ import {
 
 gameStart('What number is missing in the progression?');
 let missingNumber = 0;
-export function generateGameProgression() {
+function generateGameProgression() {
   const progressionNumbers = [Math.floor(Math.random() * 110)];
   const progressionIncrement = Math.floor(Math.random() * 10 + 1);
   for (let i = 0; i < 9; i += 1) {
@@ -20,3 +20,5 @@ function getGameProgressionAnswer() {
   return missingNumber;
 }
 generateGameInstance(generateGameProgression, getGameProgressionAnswer, false, 3);
+
+export default generateGameProgression;
