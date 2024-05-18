@@ -12,8 +12,6 @@
     "brain-progression": "bin/brain-progression.js",
     "brain-prime": "bin/brain-prime.js"
   },
-
-
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,5 +19,9 @@
   "license": "ISC",
   "dependencies": {
     "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-plugin-import": "^2.29.1"
   }
 }
