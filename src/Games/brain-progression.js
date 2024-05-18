@@ -3,7 +3,7 @@ import {
     generateGameInstance,
   } from '../../src/index.js';
   
-  gameStart('Type number, which is missing in the progression?');
+  gameStart('What number is missing in the progression?');
   
   let missingNumber = 0;
   
