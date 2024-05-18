@@ -7,7 +7,7 @@ import {
   
   let missingNumber = 0;
   
-   export function generateGameProgression() {
+  export function generateGameProgression() {
     const progressionNumbers = [Math.floor(Math.random() * 110)];
     const progressionIncrement = Math.floor(Math.random() * 10 + 1);
     for (let i = 0; i < 9; i += 1) {
