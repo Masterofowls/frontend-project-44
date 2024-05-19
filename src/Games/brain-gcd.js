@@ -1,7 +1,7 @@
 import { gameStart, gcd, generateGameInstance } from '../index.js';
 
 gameStart('Find the greatest common divisor of given numbers.');
-function generateGameGCD() {
+export default function generateGameGCD() {
   const a = Math.floor(Math.random() * 110);
   const b = Math.floor(Math.random() * 110);
   return `${a} ${b}`;
@@ -16,4 +16,3 @@ function giveGameGCDAnswer(question) {
 }
 generateGameInstance(generateGameGCD, giveGameGCDAnswer, false, 3);
 
-export default generateGameGCD;

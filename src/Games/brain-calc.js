@@ -1,7 +1,7 @@
 import { gameStart, generateGameInstance } from '../index.js';
 
 gameStart('What is the result of the expression?');
-function generateGameCalc() {
+export default function generateGameCalc() {
   const a = Math.floor(Math.random() * 110);
   const b = Math.floor(Math.random() * 110);
   const c = Math.floor(Math.random() * 110);
@@ -25,4 +25,3 @@ function giveGameCalcAnswer(question) {
 }
 generateGameInstance(generateGameCalc, giveGameCalcAnswer, false, 3);
 
-export default generateGameCalc;
