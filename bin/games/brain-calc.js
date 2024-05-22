@@ -1,7 +1,9 @@
-import { gameStart, generateGameInstance } from '../index.js';
+#!/usr/bin/env node
+/* eslint no-eval: 0 */
+import { gameStart, generateGameInstance } from '../../src/index.js';
 
 gameStart('What is the result of the expression?');
-export default function generateGameCalc() {
+function generateGameCalc() {
   const a = Math.floor(Math.random() * 110);
   const b = Math.floor(Math.random() * 110);
   const c = Math.floor(Math.random() * 110);
@@ -15,13 +17,9 @@ export default function generateGameCalc() {
   }
   return `${a} ${sign} ${b}`;
 }
-function giveGameCalcAnswer(question) {
-  try {
-    return new Function(`return ${question}`)();
-  } catch (error) {
-    console.error('Error evaluating question:', error);
-    return null;
-  }
-}
-generateGameInstance(generateGameCalc, giveGameCalcAnswer, false, 3);
 
+function giveGameCalcAnswer(question) {
+  return eval(question);
+}
+
+generateGameInstance(generateGameCalc, giveGameCalcAnswer, false, 3);

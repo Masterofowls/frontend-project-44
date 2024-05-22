@@ -1,37 +1,47 @@
 import readlineSync from 'readline-sync';
 
 let name = '';
-function gameStart(rules) {
+export function gameStart(rules) {
   console.log('Welcome to the Brain Games!');
-  name = readlineSync.question('May I have your name');
+  name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
   console.log(rules);
 }
+
 export function failState() {
   console.log(`Let's try again, ${name}!`);
 }
+
 export function winState() {
   console.log(`Congratulations, ${name}!`);
 }
+
 export function gcd(a, b) {
-  let a2 = Math.abs(a);
-  let b2 = Math.abs(b);
-  if (b2 > a2) {
-    const temp = a2;
-    a2 = b2;
-    b2 = temp;
+  let newA = Math.abs(a);
+  let newB = Math.abs(b);
+  if (newB > newA) {
+    const temp = newA;
+    newA = newB;
+    newB = temp;
   }
-  const run = true;
-  while (run) {
-    if (b2 === 0) return a2;
-    a2 %= b2;
-    if (a2 === 0) return b2;
-    b2 %= a2;
+  while (true) {
+    if (newB === 0) return newA;
+    newA %= newB;
+    if (newA === 0) return newB;
+    newB %= newA;
   }
 }
+
+/**
+ * @param {any} question Вопрос
+ * @param {any} answerCheck Ответ
+ * @param {boolean} useAnswerCheckingYN Использование бинарного ответа типа yes/no
+ * вместо точного ответа цифрами
+ */
+
 export function gameCycle(question, answer, useAnswerCheckingYN = false) {
   console.log(`Question: ${question}`);
-  const userAnswer = readlineSync.question('Type your answer: ');
+  const userAnswer = readlineSync.question('Your answer: ');
   if (useAnswerCheckingYN === true) {
     if (
       (userAnswer === 'no' && answer)
@@ -39,7 +49,7 @@ export function gameCycle(question, answer, useAnswerCheckingYN = false) {
       || (userAnswer !== 'yes' && userAnswer !== 'no')
     ) {
       console.log(
-        `'${userAnswer}' is incorrect answer ;(. Right answer was '${
+        `'${userAnswer}' is wrong answer ;(. Correct answer was '${
           userAnswer === 'yes' ? 'no' : 'yes'
         }'.`,
       );
@@ -49,12 +59,20 @@ export function gameCycle(question, answer, useAnswerCheckingYN = false) {
   }
   if (+answer !== +userAnswer) {
     console.log(
-      `'${userAnswer}' is incorrect answer ;(. Right answer was '${answer}'.`,
+      `'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`,
     );
     return false;
   }
   return true;
 }
+/**
+ * @param {function} generateQuestion Функция генерирует вопрос -
+ * () => { return question }
+ * @param {function} generateAnswer Функция возвращает ответ - ( question ) => { return answer }
+ * @param {boolean} useAnswerCheckingYN Использование бинарного ответа
+ * типа yes/no вместо точного ответа цифрами
+ * @param {number} amount Количество вопросов в одной игре(не меньше 1)
+ */
 export function generateGameInstance(
   generateQuestion,
   generateAnswer,
@@ -75,5 +93,3 @@ export function generateGameInstance(
   winState();
   return 1;
 }
-
-export default gameStart;
