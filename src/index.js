@@ -15,29 +15,18 @@ export function failState() {
 export function winState() {
   console.log(`Congratulations, ${name}!`);
 }
-
 export function gcd(a, b) {
   let newA = Math.abs(a);
   let newB = Math.abs(b);
-  if (newB > newA) {
-    const temp = newA;
-    newA = newB;
-    newB = temp;
-  }
-  while (true) {
-    if (newB === 0) return newA;
-    newA %= newB;
-    if (newA === 0) return newB;
-    newB %= newA;
-  }
-}
 
-/**
- * @param {any} question Вопрос
- * @param {any} answerCheck Ответ
- * @param {boolean} useAnswerCheckingYN Использование бинарного ответа типа yes/no
- * вместо точного ответа цифрами
- */
+  while (newB !== 0) {
+    const temp = newB;
+    newB = newA % newB;
+    newA = temp;
+  }
+
+  return newA;
+}
 
 export function gameCycle(question, answer, useAnswerCheckingYN = false) {
   console.log(`Question: ${question}`);
@@ -65,14 +54,7 @@ export function gameCycle(question, answer, useAnswerCheckingYN = false) {
   }
   return true;
 }
-/**
- * @param {function} generateQuestion Функция генерирует вопрос -
- * () => { return question }
- * @param {function} generateAnswer Функция возвращает ответ - ( question ) => { return answer }
- * @param {boolean} useAnswerCheckingYN Использование бинарного ответа
- * типа yes/no вместо точного ответа цифрами
- * @param {number} amount Количество вопросов в одной игре(не меньше 1)
- */
+
 export function generateGameInstance(
   generateQuestion,
   generateAnswer,

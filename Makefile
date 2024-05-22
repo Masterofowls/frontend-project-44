@@ -1,8 +1,3 @@
-#Makefile
-extends:
-	'airbnb-base'
-  	'plugin:jest/recommended'
-
 install:
 	npm ci
 
